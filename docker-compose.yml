@@ -1,0 +1,12 @@
+# Joern in server mode. Start with:  docker compose up -d joern
+# The backend writes submitted code into ./joern_workspace, which Joern sees as /work.
+services:
+  joern:
+    image: ghcr.io/joernio/joern:master
+    command: joern --server --server-host 0.0.0.0 --server-port 8080
+    working_dir: /work
+    ports:
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - ./joern_workspace:/work
+    restart: unless-stopped

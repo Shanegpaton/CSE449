@@ -1,0 +1,7 @@
+# Install: py -3.12 -m pip install -r requirements.txt
+# Python 3.12 required (3.14 breaks pydantic/fastapi)
+fastapi==0.95.2
+uvicorn[standard]==0.22.0
+pydantic==1.10.13
+requests==2.32.3
+python-multipart==0.0.9
